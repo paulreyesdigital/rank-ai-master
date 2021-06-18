@@ -1,0 +1,44 @@
+.loading-screen {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    // height: 100vh;
+    height: 100vh;
+    background: $grey;
+    overflow: hidden;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    transition: height .4s ease-in;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    h1 {
+        font-family: regular;
+        color: $backgroundWhite;
+        margin-top: 50px;
+        font-size: 18px;
+        opacity: .9;
+    }
+
+    .indicator {
+        background: $accentRed;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: loading .5s ease infinite;
+    }    
+}
+
+
+@keyframes loading {
+    from{
+        transform: scale(0);
+        opacity: 1;
+    } 
+    to {
+        transform: scale(1);
+        opacity: .4;
+    }
+}

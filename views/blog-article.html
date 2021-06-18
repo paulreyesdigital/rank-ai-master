@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/blog-article.css">
+    <title>RANK Ai for Conversion.ai | RankFortress</title>
+</head>
+<body>
+
+    <section class="alert-wrapper">
+
+        <!-- <div class="alert">
+            <p>sample message</p>
+            <img src="../assets/images/close-white.svg">    
+        </div> -->
+        
+    </section>
+
+    <section class="new-task">
+        <form class="newtask-form" action="#">
+            <h2>New Task</h2>
+            <label>Task Name</label>
+            <input name="task_name" type="text" required>
+            <label>Description</label>
+            <textarea name="description" rows="5" required></textarea>
+            <small>Describe the content you want to create. The better you describe what type of content you want to create, the better results.</small>
+            <label>Keywords</label>
+            <input name="keywords" type="text" required>
+            <small>Give a maximum if three(3) keywords. Separate with comma(,)</small>
+            <label>Word Count</label>
+            <input name="word_count" type="number" min="0" required>
+            <input type="submit" value="RUN Ai">
+            <input type="reset" value="CANCEL">
+        </form>
+    </section>
+
+    <section class="loading-screen">
+        <div class="indicator"></div>
+        <h1>Just a sec...</h1>
+    </section>
+
+    <main>
+        <div class="top-bar">
+            <p id="main-menu-btn">Main Menu</p>
+            <img src="../assets/images/logo.svg" alt="">
+            <p></p>
+        </div>
+        
+        <h1>Blog Articles</h1>
+
+        <div class="list-header">
+            <h2>Tasks</h2>
+            <button id="new-task-btn">New Task</button>
+        </div>
+
+        <div class="list">
+
+            <!-- <div class="task-item active-task">
+                <h2>Sherwood Dental</h2>
+                <p>Active</p>
+            </div>
+
+            <div class="task-item failed-task">
+                <h2>Lancaster Dental</h2>
+                <p>Failed</p>
+            </div>
+
+            <div class="task-item">
+                <h2>Lancaster Dental</h2>
+                <p>Done</p>
+            </div>
+
+            <div class="task-item">
+                <h2>Lancaster Dental</h2>
+                <p>Done</p>
+            </div>
+
+            <div class="task-item">
+                <h2>Lancaster Dental</h2>
+                <p>Done</p>
+            </div> -->
+
+        </div>
+    </main>
+
+    <script src="../scripts/blog-article.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+@import "./partials/fonts";
+@import "./partials/colors";
+@import "./partials/loader";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background: $grey;
+    height: 100vh;
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+        margin-top: 70px;
+    }
+
+
+    form {
+        background: $backgroundWhite;
+        border-radius: 10px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-family: bold;
+            font-size: 36px;
+            line-height: 44px;
+            text-align: center;
+            color: $grey;
+            letter-spacing: -0.03em;
+        }
+
+        p {
+            margin: 25px 0;
+            text-align: center;
+            font-family: semi-bold;
+            font-size: 12px;
+            color: $accentRed;
+        }
+
+        label {
+            font-family: semi-bold;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: -0.03em;
+            margin-bottom: 5px;
+        }
+
+        input[type=text],
+        input[type=password] {
+            height: 40px;
+            margin-bottom: 10px;
+            border: 1px solid $lightGrey;
+            border-radius: 5px;
+            padding: 0 10px;
+            color: $grey;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        input[type=submit] {
+            font-family: regular;
+            margin-top: 20px;
+            height: 40px;
+            background: $accentRed;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 16px;
+            line-height: 20px;
+            color: #F5F5F5;
+            transition: .2s background ease-in-out;
+
+            &:hover {
+                background: $lightRed;
+            }
+        }
+
+    }
+
+    .credits {
+        margin-top: 100px;
+
+        p {
+            text-align: center;
+            font-size: 10px;
+            line-height: 15px;
+            font-family: regular;
+            letter-spacing: -0.03em;
+            color: $backgroundWhite;
+            opacity: 0.5;
+            margin-top: 5px;
+
+            span {
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+}

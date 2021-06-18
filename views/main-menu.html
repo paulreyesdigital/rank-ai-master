@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main-menu.css">
+    <title>RANK Ai for Conversion.ai | RankFortress</title>
+</head>
+<body>
+
+    <section class="loading-screen">
+        <div class="indicator"></div>
+        <h1>Just a sec...</h1>
+    </section>
+
+    <section class="alert-wrapper">
+
+        <!-- <div class="alert">
+            <p>sample message</p>
+            <img src="../assets/images/close-white.svg">    
+        </div> -->
+        
+    </section>
+
+    <section class="my-account">
+        <form id="account-form" action="#">
+            <h2 class="user_fullname">...</h2>
+            <p class="username">...</p>
+            <label>Password</label>
+            <input name="password" type="text">
+            <hr>
+            <h3>Conversion.ai</h3>
+            <label>Conversion.ai Username</label>
+            <input name="conversion_username" type="text">
+            <label>Conversion.ai Password</label>
+            <input name="conversion_password" type="text">
+            <hr>
+            <h3>Destination Folder</h3>
+            <label>Folder Path</label>
+            <input name="folder_path" type="text" readonly>
+            <input type="submit" value="Save">
+            <input type="reset" value="Close">
+        </form>
+    </section>
+
+    <main>
+
+        <div class="top-bar">
+            <p id="my-account-btn">My Account</p>
+            <img src="../assets/images/logo.svg" alt="">
+            <p id="switch-account-btn">Switch Account</p>
+        </div>
+
+        <h1>Main Menu</h1>
+
+        <div class="menu-items">
+            <button id="blog-articles-btn">Blog Articles</button>
+            <button disabled>
+                <div class="ribbon"><span>Coming soon!</span></div>
+                GMB Reviews
+            </button>
+            <button disabled>
+                <div class="ribbon"><span>Coming soon!</span></div>
+                Website Contents
+            </button>
+        </div>
+
+    </main>
+
+    <script src="../scripts/main-menu.js"></script>
+</body>
+</html>
