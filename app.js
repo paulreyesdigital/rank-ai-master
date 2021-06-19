@@ -159,7 +159,7 @@ const CONTENT = {
   title: "Sample Title",
   introPar:
     "Anim Lorem do quis ex adipisicing ex veniam commodo sint et quis cillum. Sint adipisicing commodo nostrud do ut. Est ut id aliquip mollit velit consectetur enim. Ea commodo consectetur non cupidatat dolore minim non laborum nulla pariatur laborum non enim. Adipisicing aliquip occaecat Lorem velit enim et elit nostrud duis.",
-  sections: [
+    sections: [
     {
       header: "h2 #1",
       par: [
@@ -1136,7 +1136,7 @@ async function startNewAutomateInstance(data = {}) {
       );
 
       // filter document content
-      await filterFromDocument(driver, currentSection);
+      // await filterFromDocument(driver, currentSection);
 
       // get the current section word count
       for (let i = 0; i < currentSection.length; i++) {
@@ -1169,42 +1169,54 @@ async function startNewAutomateInstance(data = {}) {
       }
     }
 
-    function saveContentData() {
-      const documentContent = await driver
-        .findElement(By.xpath(`//*[@id="docEditor"]/div[1]`))
-        .getAttribute("innerHTML");
-
-      await driver.executeScript(`// initialize Jquery
-        (function () {
-          // Load the script
-          var script = document.createElement("SCRIPT");
-          script.src =
-            "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js";
-          script.type = "text/javascript";
-          document.getElementsByTagName("head")[0].appendChild(script);
-        
-          // Poll for jQuery
-          var checkReady = function (callback) {
-            if (window.jQuery) {
-              callback(jQuery);
-            } else {
-              window.setTimeout(function () {
-                checkReady(callback);
-              }, 20);
-            }
-          };
-        
-          // Start polling...
-          checkReady(function ($) {
-            $(function () {
-              console.log("jQuery is loaded!");
-            });
-          });
-        })();
-        `);
-    }
+    
   } catch (err) {
     console.log(err);
     await driver.close();
   }
+
+  await sleep(5000)
+  async function getContentData() {
+    let contentData = {
+      title: "",
+      introPar: "",
+      sections: [],
+    };
+
+    // start iteration from -1
+    let hIterated = -1;
+    for (let i = 0; i < elements.length; i++) {
+      if (i === 0) contentData.title = await elements[i].getText();
+      if (i === 1) contentData.introPar = await elements[i].getText();
+      if (i >= 2) {
+        switch (await elements[i].getTagName()) {
+          case "h2":
+            contentData.sections.push({
+              header: await elements[i].getText(),
+              par: [],
+            });
+            hIterated++;
+            break;
+          case "p":
+            if ((await elements[i].getText()) !== "") {
+              contentData.sections[hIterated].par.push(
+                await elements[i].getText()
+              );
+            }
+            break;
+          default:
+            break;
+        }
+      }
+    }
+
+    // log content
+    console.log(contentData);
+    for (let i = 0; i < contentData.sections.length; i++) {
+      console.log(contentData.sections[i]);
+    }
+
+    return contentData;
+  }
+  return await getContentData()
 }
